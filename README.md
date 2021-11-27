@@ -1,1 +1,3 @@
-# Admin-CMS-Foods-JQuery-
+# Admin-CMS-Foods-(JQuery)
+
+Using JQuery to build frontend
