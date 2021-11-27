@@ -1,0 +1,206 @@
+#register {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-form {
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+}
+
+.input-group {
+    width: 100%;
+}
+
+.input-group > * {
+    display: block;
+    width: 100%;
+}
+
+.input-area > * {
+    display: block;
+    margin: 8px 0;
+}
+
+.input-area input {
+    padding: 4px;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.input-area label {
+    text-transform: capitalize;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn-submit {
+    padding: 5px;
+    border: none;
+    border-radius: 5px !important;
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+    font-family: var(--bs-font-sans-serif);
+}
+
+.register-header {
+    margin: 10px auto;
+    text-align: center;
+}
+
+.login-choose {
+    margin: 10px auto;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.login-choose span {
+    font-size: 1.2rem;
+}
+
+#to-login {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.login-google {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-header {
+    text-align: center;
+}
+
+.login-form {
+    width: 20%;
+    margin: 0 auto
+}
+
+#active-user-name {
+    text-transform: capitalize;
+}
+
+#active-user-role {
+    text-transform: capitalize;
+}
+
+#image-view {
+    width: 100%;
+}
+
+.bet {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: grey;
+    color: white;
+}
+
+.view-panel-price {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    gap: 5px;
+}
+
+.view-panel-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.view-panel-description h4 {
+    text-align: center;
+}
+
+#edit-field-image {
+    position: relative;
+}
+
+#create-field-image {
+    position: relative;
+}
+
+#delete-image-button {
+    display: none;
+}
+
+#edit-image-preview {
+    width: 100%;
+}
+
+#edit-image-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.38);
+    font-weight: bold;
+    margin: 5px 0 0 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#create-image-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.38);
+    font-weight: bold;
+    margin: 5px 0 0 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#reset-image-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.38);
+    font-weight: bold;
+    margin: 5px 5px 0 0;
+    padding: 2px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-label {
+    font-weight: bold !important;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#addFood {
+    cursor: pointer;
+}
+/* #category-view {
+    text-transform: capitalize;
+} */

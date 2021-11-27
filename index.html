@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Hacktiv CMS</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <meta name="google-signin-client_id" content="746496567433-d79dmhmrqmncnqoohcu2olve00hei5op.apps.googleusercontent.com">
+    <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="register">
+        <h2 class="register-header">Admin Registration Hacktiv CMS</h2>
+        <form action="" class="register-form" method="POST">
+            <div class="input-group">
+                <div class="input-area">
+                    <label for="username">username</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="input-area">
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="input-area">
+                    <label for="password">password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="input-area">
+                    <label for="phone">phone</label>
+                    <input type="text" name="phone" id="phone">
+                </div>
+                <div class="input-area">
+                    <label for="address">address</label>
+                    <input type="text" name="address" id="address">
+                </div>
+                <button class="btn-submit" type="submit" id="submit-register">REGISTER</button>
+            </div>
+        </form>
+        <div class="login-choose">
+            <span>Sudah jadi admin?</span>
+            <span id="to-login" onclick="toLoginPage()">Login Di Sini</span>
+        </div>
+        <div class="login-google">
+            <span>Atau Login Sebagai Staff</span>
+            <span id="to-login-google">Login Di Sini</span>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+    </div>
+    <div id="login">
+        <h2 class="login-header">Admin Login Hacktiv CMS</h2>
+        <form action="" class="login-form" method="POST">
+            <div class="input-group">
+                <div class="input-area">
+                    <label for="email">email</label>
+                    <input type="email" name="email" id="email-login">
+                </div>
+                <div class="input-area">
+                    <label for="password">password</label>
+                    <input type="password" name="password" id="password-login">
+                </div>
+                <button class="btn-submit" type="submit" id="submit-login">LOGIN</button>
+            </div>
+        </form>
+        <div class="login-choose">
+            <span>Belum jadi admin?</span>
+            <span id="to-login" onclick="toRegisterPage()">Daftar Di Sini</span>
+        </div>
+    </div>
+    <div id="app">
+      <div id="sidebar" class="active">
+          <div class="sidebar-wrapper active">
+              <div class="sidebar-header">
+                  <div class="d-flex justify-content-between">
+                      <div class="logo">
+                          <a href="index.html"><h2>Hacktiv CMS</h2></a>
+                      </div>
+                      <div class="toggler">
+                          <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                      </div>
+                  </div>
+              </div>
+              <div class="sidebar-menu">
+                  <ul class="menu">
+                      <li class="sidebar-title">Menu</li>
+
+                      <li class="sidebar-item active ">
+                          <a id="users" href="" class='sidebar-link'>
+                              <i class="bi bi-people-fill"></i>
+                              <span>Users</span>
+                          </a>
+                      </li>
+                      <li class="sidebar-item">
+                          <a id="foods" href="" class='sidebar-link'>
+                            <i class="bi bi-egg-fried"></i>
+                              <span>Foods</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+          </div>
+      </div>
+        <div id="main">
+          <header class='mb-3'>
+              <nav class="navbar navbar-expand navbar-light ">
+                  <div class="container-fluid">
+                      <a href="#" class="burger-btn d-block">
+                          <i class="bi bi-justify fs-3"></i>
+                      </a>
+
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                              <li class="nav-item dropdown me-1">
+                                  <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                      aria-expanded="false">
+                                      <i class='bi bi-envelope bi-sub fs-4 text-gray-600'></i>
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                      <li>
+                                          <h6 class="dropdown-header">Mail</h6>
+                                      </li>
+                                      <li><a class="dropdown-item" href="#">No new mail</a></li>
+                                  </ul>
+                              </li>
+                              <li class="nav-item dropdown me-3">
+                                  <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                      aria-expanded="false">
+                                      <i class='bi bi-bell bi-sub fs-4 text-gray-600'></i>
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                      <li>
+                                          <h6 class="dropdown-header">Notifications</h6>
+                                      </li>
+                                      <li><a class="dropdown-item">No notification available</a></li>
+                                  </ul>
+                              </li>
+                          </ul>
+                          <div class="dropdown">
+                              <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <div class="user-menu d-flex">
+                                      <div class="user-name text-end me-3">
+                                          <h6 id="active-user-name" class="mb-0 text-gray-600">John Doe</h6>
+                                          <p id="active-user-role" class="mb-0 text-sm text-gray-600">Administrator</p>
+                                      </div>
+                                      <div class="user-img d-flex align-items-center">
+                                          <div class="avatar avatar-md">
+                                              <img src="https://picsum.photos/id/1005/500/500">
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                  <li>
+                                      <h6 class="dropdown-header">Hello, John!</h6>
+                                  </li>
+                                  <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-person me-2"></i> My
+                                          Profile</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-gear me-2"></i>
+                                          Settings</a></li>
+                                  <li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
+                                          Wallet</a></li>
+                                  <li>
+                                      <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a onclick="proceedLogout()" class="dropdown-item" href=""><i
+                                              class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </nav>
+          </header>
+
+            <div class="page-heading">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3 id="table-name">Entity Table</h3>
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+                        <!-- <div class="card-header">
+                            Entity List
+                        </div> -->
+                        <div class="card-body">
+                            <table class="table table-striped" id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>City</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="data-target">
+                                    <tr>
+                                        <td>Dummy</td>
+                                        <td>dummy@dummies.com</td>
+                                        <td>076 4820 8838</td>
+                                        <td>Jakarta</td>
+                                        <td>
+                                            <span class="badge bg-success">Active</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+        </div>
+    </div>
+    <!-- Modal View -->
+    <div class="modal fade" id="modal-view" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="view-panel">
+                  <div class="view-panel-image">
+                      <img src="" id="image-view">
+                  </div>
+                  <div class="view-panel-price">
+                    <h4 class="bet">Price</h4>
+                    <h5 id="price-view"></h5>
+                  </div>
+                  <div class="view-panel-price">
+                    <h4 class="bet">Category</h4>
+                    <h5 id="category-view"></h5>
+                  </div>
+                  <div class="view-panel-price">
+                    <h4 class="bet">Author</h4>
+                    <h5 id="author-view"></h5>
+                  </div>
+                  <div class="view-panel-description">
+                    <h4 class="bet">Description</h4>
+                    <p id="description-view"></p>
+                  </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modal View -->
+    <!-- Modal edit -->
+    <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-edit-title" id="exampleModalLongTitle">Modal title</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body"><form>
+                <input style="display: none;" type="text" class="form-control" id="edit-field-id">
+                <div class="mb-3">
+                  <label for="edit-field-name" class="form-label">Food name</label>
+                  <input type="text" class="form-control" id="edit-field-name">
+                </div>
+                <div class="mb-3">
+                  <label for="edit-field-price" class="form-label">Price</label>
+                  <input type="text" class="form-control" id="edit-field-price">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Category</label>
+                  <select id="edit-field-categories" class="form-select" aria-label="Default select example">
+                  </select>
+                </div>
+                <div class="mb-3">
+                    <label for="edit-field-description" class="form-label">Description</label>
+                    <textarea class="form-control" id="edit-field-description" rows="6"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Image Preview</label>
+                    <input style="display: none;" type="file" class="form-control" id="edit-field-image-input">
+                    <div id="edit-field-image">
+                        <img src="" id="edit-image-preview">
+                        <label for="edit-field-image-input" id="edit-image-button">CHANGE</label>
+                        <span id="reset-image-button">&#10006;</span>
+                    </div>
+                </div>
+                <button id="submit-edit" type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modal edit -->
+    <!-- Modal Create -->
+    <div class="modal fade" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-create-title" id="exampleModalLongTitle">Add new food</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="create-field-name" class="form-label">Food name</label>
+                        <input type="text" class="form-control" id="create-field-name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-field-price" class="form-label">Price</label>
+                        <input type="text" class="form-control" id="create-field-price">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <select id="create-field-categories" class="form-select" aria-label="Default select example">
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-field-description" class="form-label">Description</label>
+                        <textarea class="form-control" id="create-field-description" rows="6"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="create-field-image-input" class="form-label">ADD PICTURE</label>
+                        <input type="file" class="form-control" id="create-field-image-input">
+                    </div>
+                    <button id="submit-create" type="button" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- End Modal Create -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
